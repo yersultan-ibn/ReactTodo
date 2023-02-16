@@ -1,27 +1,36 @@
 import { useState } from "react";
 import "./employees-list-item.css";
 
-const EmployeesListItem = ({ name, salary, increase, rise, onToggleProp }) => {
-  let classNames = "list-group-item d-flex justify-content-between";
+const EmployeesListItem = ({
+  name,
+  salary,
+  increase,
+  rise,
+  onToggleProp,
+  onDelete,
+}) => {
+  let clazz = "list-group-item d-flex justify-content-between";
 
   if (increase) {
-    classNames += " increase";
+    clazz += " increase";
   }
 
   if (rise) {
-    classNames += " like";
+    clazz += " like";
   }
   return (
-    <li
-      className={classNames}
-      data-toggle="rise"
-      onClick={onToggleProp}
-    >
-      <span className="list-group-item-label">{name}</span>
+    <li className={clazz}>
+      <span
+        className="list-group-item-label"
+        data-toggle="rise"
+        onClick={onToggleProp}
+      >
+        {name}
+      </span>
       <input
         type="text"
         className="list-group-item-input"
-        defaultValue={salary + "тнг"}
+        defaultValue={salary + " тнг"}
       />
       <div className="d-flex justify-content-center align-items-center">
         <button
@@ -33,7 +42,7 @@ const EmployeesListItem = ({ name, salary, increase, rise, onToggleProp }) => {
           <i className="fas fa-cookie"></i>
         </button>
 
-        <button type="button" className="btn-trash btn-sm ">
+        <button type="button" className="btn-trash btn-sm " onClick={onDelete}>
           <i className="fas fa-trash"></i>
         </button>
         <i className="fas fa-star"></i>
