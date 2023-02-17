@@ -5,8 +5,7 @@ import EmployeesList from "../employees-list/employees-list";
 import EmployeesAddForm from "../employees-add-form/employees-add-form";
 
 import "./app.css";
-import { Component, useState } from "react";
-
+import { useState } from "react";
 
 const App = (props) => {
   const dataArr = [
@@ -29,6 +28,7 @@ const App = (props) => {
       id: 3,
     },
   ];
+
   const [data, setData] = useState(dataArr);
   const [term, setTerm] = useState("");
   const [filter, setFilter] = useState("");
