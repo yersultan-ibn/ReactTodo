@@ -14,16 +14,16 @@ const EmployeesListItem = ({
   if (increase) {
     clazz += " increase";
   }
-
   if (rise) {
     clazz += " like";
   }
+
   return (
     <li className={clazz}>
       <span
         className="list-group-item-label"
-        data-toggle="rise"
         onClick={onToggleProp}
+        data-toggle="rise"
       >
         {name}
       </span>
@@ -36,8 +36,8 @@ const EmployeesListItem = ({
         <button
           type="button"
           className="btn-cookie btn-sm "
-          data-toggle="increase"
           onClick={onToggleProp}
+          data-toggle="increase"
         >
           <i className="fas fa-cookie"></i>
         </button>

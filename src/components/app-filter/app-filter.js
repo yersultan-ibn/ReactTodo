@@ -8,13 +8,13 @@ const AppFilter = (props) => {
   ];
 
   const buttons = buttonsData.map(({ name, label }) => {
-    const active = props.filter === name;
+    const active = props.onUpdateFilter === name;
     const clazz = active ? "btn-light" : "btn-outline-light";
     return (
       <button
         type="button"
-        className={`btn ${clazz}`}
         key={name}
+        className={`btn ${clazz}`}
         onClick={() => props.onUpdateFilter(name)}
       >
         {label}
